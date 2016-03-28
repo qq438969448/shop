@@ -1,6 +1,8 @@
 购物系统
 =====================
 
+![](https://travis-ci.org/vito16/shop.svg?branch=master)
+
 在线商城，持续完善中...
 
 ## 启动
