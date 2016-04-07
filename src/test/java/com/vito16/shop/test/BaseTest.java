@@ -2,6 +2,7 @@ package com.vito16.shop.test;
 
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.vito16.shop.Application;
@@ -12,5 +13,6 @@ import com.vito16.shop.Application;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(Application.class)
+@ActiveProfiles("test")
 public abstract class BaseTest {
 }

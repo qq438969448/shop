@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -36,11 +37,50 @@ public class Application {
 	@Value("${jdbc.password}")
 	private String password;
 
+	@Value("${test.jdbc.driverClassName}")
+	private String testDriverClassName;
+
+	@Value("${test.jdbc.url}")
+	private String testUrl;
+
+	@Value("${test.jdbc.username}")
+	private String testUsername;
+
+	@Value("${test.jdbc.password}")
+	private String testPassword;
+
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class);
 	}
 
 	@Bean
+	@Profile("test")
+	public DataSource testDataSource(){
+		DruidDataSource druidDataSource = new DruidDataSource();
+		druidDataSource.setDriverClassName(testDriverClassName);
+		druidDataSource.setUrl(testUrl);
+		druidDataSource.setUsername(testUsername);
+		druidDataSource.setPassword(testPassword);
+
+		druidDataSource.setMaxActive(20);
+		druidDataSource.setInitialSize(1);
+		druidDataSource.setMaxWait(60000);
+		druidDataSource.setMinIdle(1);
+
+		druidDataSource.setTimeBetweenEvictionRunsMillis(60000);
+		druidDataSource.setMinEvictableIdleTimeMillis(300000);
+
+		druidDataSource.setValidationQuery("SELECT 'x'");
+		druidDataSource.setTestWhileIdle(true);
+		druidDataSource.setTestOnBorrow(false);
+		druidDataSource.setTestOnReturn(false);
+		druidDataSource.setPoolPreparedStatements(true);
+		druidDataSource.setMaxOpenPreparedStatements(20);
+		return druidDataSource;
+	}
+
+	@Bean
+	@Profile("production")
 	public DataSource dataSource() {
 		DruidDataSource druidDataSource = new DruidDataSource();
 		druidDataSource.setDriverClassName(driverClassName);
