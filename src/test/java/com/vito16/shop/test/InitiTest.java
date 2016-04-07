@@ -22,14 +22,8 @@ import com.vito16.shop.service.UserService;
  * 初始化测试用例
  * <p/>
  * 插入部分基本的测试数据
- * <p/>
- * Created by Vito on 2014/7/15.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"/applicationContext1.xml"})
-@Transactional
-@Commit
-public class InitiTest {
+public class InitiTest extends BaseTest{
 
     @Autowired
     ProductService productService;

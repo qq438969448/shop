@@ -1,5 +1,6 @@
 package com.vito16.shop.test;
 
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 
 import com.vito16.shop.model.Admin;
 import com.vito16.shop.model.Product;
@@ -23,11 +25,7 @@ import com.vito16.shop.service.ProductService;
  * @author 木鱼 muyu@yiji.com
  * @version 2016/03/14
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"/applicationContext1.xml"})
-@Transactional
-@Rollback
-public class ProductTest {
+public class ProductTest extends BaseTest {
 
     @Autowired
     AdminService adminService;
@@ -81,8 +79,10 @@ public class ProductTest {
     @Test
     public void testFindNew() {
         List<Product> productList = productService.findOld();
-        for (Product product : productList) {
-            System.out.println(ToStringBuilder.reflectionToString(product));
+        if(!CollectionUtils.isEmpty(productList)) {
+            for (Product product : productList) {
+                System.out.println(product);
+            }
         }
     }
 
