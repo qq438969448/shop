@@ -1,10 +1,9 @@
 package com.vito16.shop.common;
 
-import java.util.List;
-
+import com.google.common.collect.Lists;
 import org.apache.commons.lang3.StringUtils;
 
-import com.google.common.collect.Lists;
+import java.util.List;
 
 /**
  * @author Vito

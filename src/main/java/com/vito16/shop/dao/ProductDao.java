@@ -1,12 +1,11 @@
 package com.vito16.shop.dao;
 
-import java.util.List;
-
+import com.vito16.shop.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.vito16.shop.model.Product;
+import java.util.List;
 
 /**
  * 

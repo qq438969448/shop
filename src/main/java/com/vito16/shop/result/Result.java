@@ -10,9 +10,9 @@
  */
 package com.vito16.shop.result;
 
-import java.io.Serializable;
-
 import com.vito16.shop.common.Status;
+
+import java.io.Serializable;
 
 /**
  * @author 木鱼 muyu@yiji.com
