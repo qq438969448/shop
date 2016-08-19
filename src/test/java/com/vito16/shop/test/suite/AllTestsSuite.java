@@ -9,19 +9,20 @@
  */
 package com.vito16.shop.test.suite;
 
+import com.vito16.shop.test.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-
-import com.vito16.shop.test.AdminTest;
-import com.vito16.shop.test.OrderTest;
-import com.vito16.shop.test.UserTest;
 
 /**
  * @author 木鱼 muyu@yiji.com
  * @version 2015/10/30
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({AdminTest.class, OrderTest.class, UserTest.class})
+@Suite.SuiteClasses({AdminTest.class,
+        OrderTest.class,
+        UserTest.class,
+        ProductTest.class,
+        RegTest.class})
 public class AllTestsSuite {
 
 }

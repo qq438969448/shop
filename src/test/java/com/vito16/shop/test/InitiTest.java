@@ -42,7 +42,7 @@ public class InitiTest extends BaseTest{
         adminService.save(admin);
 
         User user = new User();
-        user.setUsername("zhouwentao");
+        user.setUsername("zhouwentaow");
         user.setPassword("123456");
         userService.save(user);
 

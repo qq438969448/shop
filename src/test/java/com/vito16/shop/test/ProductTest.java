@@ -33,24 +33,6 @@ public class ProductTest extends BaseTest {
     ProductService productService;
 
     @Test
-    public void test() throws SecurityException, NoSuchFieldException {
-        //默认自动注册对@NumberFormat和@DateTimeFormat的支持
-        DefaultFormattingConversionService conversionService =
-                new DefaultFormattingConversionService();
-
-        //准备测试模型对象
-        Product model = new Product();
-        model.setCreateTime(new Date());
-
-        //获取类型信息
-        TypeDescriptor descriptor =
-                new TypeDescriptor(Product.class.getDeclaredField("createTime"));
-        TypeDescriptor stringDescriptor = TypeDescriptor.valueOf(Date.class);
-
-        System.out.println(conversionService.convert(model.getCreateTime(), descriptor, stringDescriptor));
-    }
-
-    @Test
     public void testAddProduct() {
         Admin admin = adminService.findOne(1);
         Product product = new Product();
@@ -74,16 +56,6 @@ public class ProductTest extends BaseTest {
         productService.save(product2);
         productService.save(product);
 
-    }
-
-    @Test
-    public void testFindNew() {
-        List<Product> productList = productService.findOld();
-        if(!CollectionUtils.isEmpty(productList)) {
-            for (Product product : productList) {
-                System.out.println(product);
-            }
-        }
     }
 
 }

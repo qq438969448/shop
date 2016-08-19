@@ -1,18 +1,14 @@
 package com.vito16.shop.test;
 
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import com.vito16.shop.Application;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @author 木鱼 muyu@yiji.com
  * @version 2016/03/14
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(Application.class)
-@ActiveProfiles("test")
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public abstract class BaseTest {
 }

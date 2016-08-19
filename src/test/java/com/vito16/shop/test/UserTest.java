@@ -39,7 +39,7 @@ public class UserTest extends BaseTest {
     @Test
     public void testGetLoginRole(){
         User user = new User();
-        user.setUsername("测试用户");
+        user.setUsername("测试用户2");
         user.setPassword("123456");
         boolean loginCheck =         userService.checkLogin(user);
         
