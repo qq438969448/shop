@@ -1,9 +1,9 @@
-echo ½Å±¾É±ËÀÔ­½ø³Ì
+echo ï¿½Å±ï¿½É±ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½
 taskkill /f /im A1javaw.exe
-echo µÈ´ý5ÃëÔÙÆô¶¯ÏîÄ¿£¬È·±£³ÌÐòÒÔÍ£Ö¹
+echo ï¿½È´ï¿½5ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í£Ö¹
 timeout /t 5
-del/f/s/q D:\jenkins\jenkins\workspace\Arunning\boot-0.0.1-SNAPSHOT.jar
-echo Ô­jarÉ¾³ý³É¹¦
-copy D:\jenkins\jenkins\workspace\bootCloud-base\target\boot-0.0.1-SNAPSHOT.jar D:\jenkins\jenkins\workspace\Arunning\boot-0.0.1-SNAPSHOT.jar
-echo ÐÂjar¸´ÖÆ³É¹¦
-start A1javaw -jar D:\jenkins\jenkins\workspace\Arunning\boot-0.0.1-SNAPSHOT.jar
+del/f/s/q D:\jenkins\jenkins\workspace\shop-0.0.1-SNAPSHOT.jar
+echo Ô­jarÉ¾ï¿½ï¿½ï¿½É¹ï¿½
+copy D:\jenkins\jenkins\workspace\bootCloud-base\target\boot-0.0.1-SNAPSHOT.jar D:\jenkins\jenkins\workspace\shop-0.0.1-SNAPSHOT.jar
+echo ï¿½ï¿½jarï¿½ï¿½ï¿½Æ³É¹ï¿½
+start A1javaw -jar D:\jenkins\jenkins\workspace\shop-0.0.1-SNAPSHOT.jar
